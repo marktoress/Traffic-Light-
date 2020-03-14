@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: lightblue;
+}
+#first {
+	display: inline-block;
+	float: left;
+	width: 300px;
+	margin-left: 100px;
+	border: 3px solid black;
+	border-radius: 50px;
+	background-color: #383838;
+}
+#first div {
+	margin: 30px auto;
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: #BABABA;
+}
+#second {
+	display: inline-block;
+	width: 300px;
+	height: 260px;
+	border: 3px solid black;
+	border-radius: 50px;
+	background-color: #383838;
+}
+p {
+	display: block;
+	margin: 30px auto;
+	width: 70%;
+	height: 180px;
+	font-size: 150px;
+	font-weight: bold;
+	text-align: center;
+	border: 3px solid red;
+	border-radius: 50px;
+}
