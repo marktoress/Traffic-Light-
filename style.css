@@ -37,6 +37,6 @@ p {
 	font-size: 150px;
 	font-weight: bold;
 	text-align: center;
-	border: 3px solid red;
+	border: 10px solid red;
 	border-radius: 50px;
 }

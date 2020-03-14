@@ -1,41 +1,43 @@
-var redLight = document.querySelector('.num1');
-var yellowLight = document.querySelector('.num2');
-var greenLight = document.querySelector('.num3');
-var timeLight = document.querySelector('p');
-var a = 10, flag = false, b = 0;
-var stopSwitch = setInterval(Switch, 1000);
-Switch();
-function Switch() {
-	if(!flag) {
-		timeLight.innerText = a;
-		timeLight.style.color = "red";
-		timeLight.style.borderColor = "red";
-		greenLight.style.backgroundColor = "#BABABA";
-		redLight.style.backgroundColor = "red"; 
-			
-		if(a < 3) {
-			yellowLight.style.backgroundColor = "yellow";
+$(function() {
+
+	var a = 10, flag = false, b = 0;
+	var stopSwitch = setInterval(Switch, 1000);
+	Switch();
+	function Switch() {
+		if(!flag) {
+			$('p').text(a);
+			$('p').css('color', 'red');
+			$('p').css('border-color', 'red');
+			$('.num3').css('background-color','#BABABA');
+			$('.num1').css('background-color','red');
+			a--;
+			if(a < 3) {
+				$('.num2').css('background-color','yellow');
+			}
+			if(a == 0) {
+				flag = true;
+				a = 10;
+			}
+		}	
+		if(flag == true) {
+			$('p').css('color', 'lime');
+			$('p').css('border-color', 'lime');
+			$('p').text(a);
+			$('.num2').css('background-color','#BABABA');
+			$('.num1').css('background-color','#BABABA');
+			$('.num3').css('background-color','lime');
+			a--;
+			++b;
+			if(a == 4 || a == 2 || a == 0) {
+				$('.num3').css('background-color','#BABABA');
+			}
+			if(a == 0) {
+				flag = false;
+				a = 10;
+			}
 		}
-		if(a == 0) {
-			flag = true;
-			a = 10;
-		}
-	}	
-	if(flag == true) {
-		timeLight.style.color = "lime";
-		timeLight.style.borderColor = "lime";
-		timeLight.innerText = a;
-		yellowLight.style.backgroundColor = "#BABABA";
-		redLight.style.backgroundColor = "#BABABA";
-		greenLight.style.backgroundColor = "lime";
-		++b;
-		if(a == 0) {
-			flag = false;
-			a = 10;
+		if(b == 10) {
+			clearInterval(stopSwitch);
 		}
 	}
-	a--;
-	if(b == 10) {
-		clearInterval(stopSwitch);
-	}
-}
+});
